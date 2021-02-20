@@ -1,28 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+  <head>
     <title>Acme Reservation</title>
-    <script src="index.js" defer></script>
-</head>
-<body>
+    <script src="dist/main.js" defer></script>
+    <style>
+      .main {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+    </style>
+  </head>
+  <body>
     <h1>Acme Researvation</h1>
-    <div
-        ><ul id="user-list">Users
-        <li><a href="#moe">Moe</a></li>
+    <div class="main">
+      <div>
+        <h2>Users</h2>
+        <ul id="user-list">
+          Users
         </ul>
-    </div>
-    <div>
-        <ul id="restaurant-list">Restaurants
-
+      </div>
+      <div>
+        <h2>Restaurants</h2>
+        <ul id="restaurant-list">
+          Restaurants
         </ul>
-    </div>
-    <div>
-        <ul id="reservation-list">Reservations
-
+      </div>
+      <div>
+        <h2>Reservations</h2>
+        <ul id="reservation-list">
+          Reservations
         </ul>
+      </div>
     </div>
-</body>
+  </body>
 </html>
