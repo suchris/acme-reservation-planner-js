@@ -34,6 +34,21 @@ const renderRestaurants = (restaurants) => {
   restaurantList.innerHTML = html;
 };
 
+const renderReservations = (reservations) => {
+  const html = reservations
+    .map(
+      (reservation) => `
+    <li>
+      <a href='#${reservation.id}'>
+        ${reservation.restaurant.name}
+      </a>
+    </li>
+    `
+    )
+    .join("");
+  reservationList.innerHTML = html;
+};
+
 const init = async () => {
   try {
     const users = (await axios.get("/api/users")).data;
@@ -44,5 +59,12 @@ const init = async () => {
     console.log(ex);
   }
 };
+
+window.addEventListener("hashchange", async () => {
+  const userId = window.location.hash.slice(1);
+  const url = `/api/users/${userId}/reservations`;
+  const reservations = (await axios(url)).data;
+  renderReservations(reservations);
+});
 
 init();
